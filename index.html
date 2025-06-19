@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Grow a Mango Tree, Gift a Future - Mango Mission Chembur</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container" role="banner">
+    <div class="logo" aria-label="Grow a Mango Tree, Gift a Future Logo">🍃 Mango Mission Chembur</div>
+    <nav aria-label="Primary navigation">
+      <a href="#hero">Home</a>
+      <a href="#seed-flow">How to Donate</a>
+      <a href="#donations">Sponsor Plants</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#growth-tracker">Growth Tracker</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Landing Section -->
+  <section id="hero" aria-label="Hero Landing Section" tabindex="-1">
+    <div class="hero-text">
+      <h1>Grow a Mango Tree, Gift a Future</h1>
+      <p>Join the #MangoMission this mango season (April to July) in Chembur, Mumbai. Donate mango seeds, sponsor plant growth, and build a greener tomorrow.</p>
+      <button class="cta" id="donate-seed-btn" aria-describedby="donation-counter-desc" aria-label="Donate Mango Seeds Now Button">
+        Donate Mango Seeds Now
+        <span class="material-icons" aria-hidden="true">grass</span>
+      </button>
+      <div class="donation-counter" aria-live="polite" aria-atomic="true" id="donation-counter" role="status">
+        <span class="material-icons" aria-hidden="true">eco</span>
+        <span id="donation-count">0</span> Seeds Donated
+      </div>
+      <p id="donation-counter-desc" class="visually-hidden">Real-time count of donated mango seeds</p>
+    </div>
+    <figure class="hero-image">
+      <img src="https://placehold.co/600x450/639c42/ffffff?text=Cinematic+Mango+Tree+Plantation" alt="Bright cinema-style photograph of people planting mango trees in green urban environment during mango season" />
+      <figcaption class="visually-hidden">Image of community members planting mango trees</figcaption>
+    </figure>
+  </section>
+
+  <!-- Seed Donation Flow -->
+  <section id="seed-flow" aria-label="How to Donate Mango Seeds">
+    <div class="section-header">
+      <h2>How to Donate Mango Seeds</h2>
+      <p>Simple steps to turn your mango seeds into new trees for Chembur.</p>
+    </div>
+    <div class="steps" role="list">
+      <article class="step" role="listitem" tabindex="0">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" stroke="#7ea135" stroke-width="3" fill="none"/><path d="M20 45c14 0 22-27 22-27" stroke="#7ea135" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>Eat a Mango</h3>
+        <p>Enjoy the delicious fruit fresh from your basket or local market.</p>
+      </article>
+      <article class="step" role="listitem" tabindex="0">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" stroke="#7ea135" stroke-width="3" fill="none"/><path d="M32 16v32M16 32h32" stroke="#7ea135" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>Save the Seed</h3>
+        <p>Carefully clean and prepare your mango seed for donation.</p>
+      </article>
+      <article class="step" role="listitem" tabindex="0">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" stroke="#7ea135" stroke-width="3" fill="none"/><path d="M24 44l16-16M40 44l-16-16" stroke="#7ea135" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <h3>Drop it Off</h3>
+        <p>Bring your seed to the designated drop-off location in Chembur.</p>
+      </article>
+    </div>
+    <div class="location-container" role="region" aria-label="Drop-off Location">
+      <a href="https://goo.gl/maps/N2EWJvfuJG2jKSRr9" target="_blank" rel="noopener" class="map-link" aria-describedby="map-desc" aria-label="Google Maps Link to Mango Seed Drop-off Location in Chembur">
+        <span class="material-icons" aria-hidden="true">place</span> View Drop-off Location on Map
+      </a>
+      <p id="map-desc" class="visually-hidden">Opens Google Maps with the drop-off location in Chembur in a new tab</p>
+      <div class="qr-code" aria-label="QR code to access Mango Seed Drop-off location link">
+        <img src="https://placehold.co/140x140/7ea135/ffffff?text=QR+Code+for+Drop-off+Location" alt="QR code linking to drop-off location for mango seed donation in Chembur" />
+        <div class="qr-code-caption">Scan to open drop-off location on your phone</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monetary Donation System -->
+  <section id="donations" aria-label="Sponsor Mango Seed Plant Growth">
+    <div class="section-header">
+      <h2>Sponsor a Mango Seedling</h2>
+      <p>Support the care and growth of planted mango seeds through monetary donations.</p>
+    </div>
+    <div class="payment-options" role="list" aria-label="Payment Methods">
+      <button class="payment-button" type="button" aria-pressed="false" data-method="Razorpay">Razorpay</button>
+      <button class="payment-button" type="button" aria-pressed="false" data-method="UPI">UPI</button>
+      <button class="payment-button" type="button" aria-pressed="false" data-method="Paytm">Paytm</button>
+      <button class="payment-button" type="button" aria-pressed="false" data-method="Card">Card</button>
+    </div>
+    <form class="donation-input" aria-label="Custom Donation Amount">
+      <label for="donation-amount">Donation Amount (₹):</label>
+      <input type="number" id="donation-amount" name="donation-amount" min="10" step="5" aria-required="true" aria-describedby="donation-help" />
+    </form>
+    <button type="button" id="make-donation" class="payment-button" style="max-width:200px;margin: 0 auto;display: block;">Donate Now</button>
+    <div class="log-container" id="donation-log" aria-live="polite" aria-atomic="false" tabindex="0" aria-label="Live transaction log of donations">
+      <!-- Transaction logs appear here -->
+      No donations yet.
+    </div>
+    <div class="transparency-panel" aria-live="polite" aria-atomic="true" aria-label="Financial transparency updates">
+      <h3>Transparency & Updates</h3>
+      <p>All funds are tracked transparently and used exclusively for seed care, nurturing, and plantation logistics. Updates on fund allocation and seedling progress are posted regularly.</p>
+    </div>
+  </section>
+
+  <!-- Leaderboard and Donor Wall -->
+  <section id="leaderboard" aria-label="Leaderboard and Donor Recognition">
+    <div class="section-header">
+      <h2>Top Contributors in the Mango Mission</h2>
+      <p>Celebrate our community heroes leading the way.</p>
+    </div>
+    <div class="leaderboard-grid" aria-live="polite" role="list">
+      <!-- Donor cards inserted here dynamically -->
+      <article class="donor-card" role="listitem" tabindex="0">
+        <div class="donor-photo" aria-hidden="true">
+          <img src="https://placehold.co/80x80/7ea135/ffffff?text=User1" alt="Photo of donor named Arjun" />
+        </div>
+        <div class="donor-name">Arjun</div>
+        <div class="donor-contrib">Seeds Donated: 15</div>
+        <div class="donor-contrib">Sponsored: ₹1500</div>
+      </article>
+      <article class="donor-card" role="listitem" tabindex="0">
+        <div class="donor-photo" aria-hidden="true">
+          <img src="https://placehold.co/80x80/8fc647/ffffff?text=User2" alt="Photo of donor named Priya" />
+        </div>
+        <div class="donor-name">Priya</div>
+        <div class="donor-contrib">Seeds Donated: 12</div>
+        <div class="donor-contrib">Sponsored: ₹1200</div>
+      </article>
+      <article class="donor-card" role="listitem" tabindex="0">
+        <div class="donor-photo" aria-hidden="true">
+          <img src="https://placehold.co/80x80/acd35f/ffffff?text=User3" alt="Photo of donor named Rohit" />
+        </div>
+        <div class="donor-name">Rohit</div>
+        <div class="donor-contrib">Seeds Donated: 10</div>
+        <div class="donor-contrib">Sponsored: ₹1000</div>
+      </article>
+    </div>
+    <p class="gamify" aria-label="Friendly gamification to encourage donations">
+      Keep going! The next top contributor could be you.
+    </p>
+  </section>
+
+  <!-- Seed Growth Tracker -->
+  <section id="growth-tracker" aria-label="Seed Growth Tracking Timeline">
+    <div class="section-header">
+      <h2>Seed Growth Tracker</h2>
+      <p>Follow the journey from seed to sapling to full mango tree.</p>
+    </div>
+    <div class="timeline">
+      <article class="timeline-item" tabindex="0">
+        <h3>Seed Collection</h3>
+        <p>Community members donate mango seeds from April to July.</p>
+        <div class="photos-preview" aria-label="Photos of collected seeds" id="seed-collection-photos">
+          <img src="https://placehold.co/120x90/7ea135/ffffff?text=Seed" alt="Photo of freshly collected mango seeds ready for planting" />
+          <img src="https://placehold.co/120x90/639c42/ffffff?text=Seed+Batch" alt="Photo showing mango seed batches collected from the community" />
+        </div>
+      </article>
+      <article class="timeline-item" tabindex="0">
+        <h3>Germination</h3>
+        <p>The seeds are nurtured carefully to sprout roots and shoots.</p>
+        <div class="photos-preview" aria-label="Photos of germinating seeds" id="germination-photos"></div>
+        <div class="photo-upload">
+          <label for="upload-germination">Upload a germination photo</label>
+          <input type="file" accept="image/*" id="upload-germination" aria-describedby="upload-germination-desc" />
+          <p id="upload-germination-desc" class="visually-hidden">Upload photos showing the germinated mango seeds for community sharing</p>
+        </div>
+      </article>
+      <article class="timeline-item" tabindex="0">
+        <h3>Sapling Stage</h3>
+        <p>The young seedlings are cared for and prepared for planting outdoors.</p>
+        <div class="photos-preview" aria-label="Photos of mango saplings" id="sapling-photos"></div>
+        <div class="photo-upload">
+          <label for="upload-sapling">Upload a sapling photo</label>
+          <input type="file" accept="image/*" id="upload-sapling" aria-describedby="upload-sapling-desc" />
+          <p id="upload-sapling-desc" class="visually-hidden">Upload photos showing healthy mango saplings for community sharing</p>
+        </div>
+      </article>
+      <article class="timeline-item" tabindex="0">
+        <h3>Plantation</h3>
+        <p>Mango saplings are planted in community parks and gardens around Chembur.</p>
+        <div class="photos-preview" aria-label="Photos of mango tree planting" id="plantation-photos"></div>
+        <div class="photo-upload">
+          <label for="upload-plantation">Upload a plantation photo</label>
+          <input type="file" accept="image/*" id="upload-plantation" aria-describedby="upload-plantation-desc" />
+          <p id="upload-plantation-desc" class="visually-hidden">Upload photos of the mango trees plantation events for community sharing</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- About Us + Mission -->
+  <section id="about" aria-label="About Us and Mission">
+    <h2>About Us &amp; Our Mission</h2>
+    <p>We are a passionate community from Chembur, Mumbai dedicated to making the city greener and healthier through the simple yet powerful act of planting mango seeds. Our vision is a sustainable Mumbai where every mango seed given today grows into a tree that nurtures future generations.</p>
+    <p>This initiative is driven by volunteers, supported by donors, and inspired by local families who believe in the power of nature and community.</p>
+  </section>
+
+  <!-- Contact & Social Media -->
+  <section id="contact" aria-label="Contact Information and Social Media">
+    <h2>Get in Touch &amp; Stay Connected</h2>
+    <a href="https://wa.me/919999999999" class="whatsapp-button" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+      <span class="material-icons" aria-hidden="true">whatsapp</span> Chat on WhatsApp
+    </a>
+    <div class="social" role="region" aria-label="Social media links">
+      <a href="https://instagram.com/mangomission" target="_blank" rel="noopener" aria-label="Instagram feed for Mango Mission">
+        <span class="material-icons" aria-hidden="true">camera_alt</span> Instagram
+      </a>
+      <a href="https://instagram.com/explore/tags/MangoMission" target="_blank" rel="noopener" aria-label="Instagram hashtag #MangoMission">
+        <span class="material-icons" aria-hidden="true">tag</span> #MangoMission
+      </a>
+      <a href="#" id="share-invite-btn" aria-label="Share invite to Mango Mission">
+        <span class="material-icons" aria-hidden="true">share</span> Share Invite
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 Mango Mission Chembur &nbsp;&bull;&nbsp; Developed with care for the community
+</footer>
+
+<script>
+  // Donation counter simulation and storage
+  const donationCountEl = document.getElementById('donation-count');
+  const donateSeedBtn = document.getElementById('donate-seed-btn');
+  const donationLog = document.getElementById('donation-log');
+  const paymentButtons = document.querySelectorAll('.payment-button[data-method]');
+  const donationInput = document.getElementById('donation-amount');
+  const makeDonationBtn = document.getElementById('make-donation');
+  const donationLogLines = [];
+  
+  // Initialize seed donation count from localStorage
+  let seedDonations = parseInt(localStorage.getItem('seedDonations')) || 0;
+  let monetaryDonations = JSON.parse(localStorage.getItem('monetaryDonations')) || [];
+  donationCountEl.textContent = seedDonations;
+
+  // Reload donation log with stored donations
+  function reloadDonationLog() {
+    if(monetaryDonations.length === 0){
+      donationLog.textContent = 'No donations yet.';
+      return;
+    }
+    donationLog.innerHTML = '';
+    monetaryDonations.forEach(d => {
+      const timeStr = new Date(d.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+      const line = document.createElement('div');
+      line.textContent = `[${timeStr}] ${d.method} donation of ₹${d.amount} received.`;
+      donationLog.appendChild(line);
+    });
+    donationLog.scrollTop = donationLog.scrollHeight;
+  }
+  reloadDonationLog();
+
+  // Seed donation click increment
+  donateSeedBtn.addEventListener('click', () => {
+    seedDonations++;
+    localStorage.setItem('seedDonations', seedDonations);
+    donationCountEl.textContent = seedDonations;
+    alert('Thank you for donating a mango seed! You are helping grow a greener future.');
+  });
+
+  // Payment method selection toggling
+  let selectedPaymentMethod = null;
+  paymentButtons.forEach(button => {
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', () => {
+      paymentButtons.forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+      button.setAttribute('aria-pressed', 'true');
+      selectedPaymentMethod = button.getAttribute('data-method');
+    });
+  });
+
+  // Make monetary donation
+  makeDonationBtn.addEventListener('click', () => {
+    const amount = Number(donationInput.value);
+    if (!selectedPaymentMethod) {
+      alert('Please select a payment method.');
+      return;
+    }
+    if (!amount || amount < 10) {
+      alert('Please enter a donation amount of at least ₹10.');
+      donationInput.focus();
+      return;
+    }
+    // Simulate a payment transaction and update donation log
+    const now = new Date().toISOString();
+    monetaryDonations.unshift({method: selectedPaymentMethod, amount: amount, timestamp: now});
+    localStorage.setItem('monetaryDonations', JSON.stringify(monetaryDonations));
+    reloadDonationLog();
+    alert(`Thank you for your generous donation of ₹${amount} via ${selectedPaymentMethod}!`);
+    donationInput.value = '';
+    paymentButtons.forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+    selectedPaymentMethod = null;
+  });
+
+  // Image upload for growth tracker
+  function handleImageUpload(inputElement, previewContainerId) {
+    const previewContainer = document.getElementById(previewContainerId);
+    inputElement.addEventListener('change', (e) => {
+      const files = inputElement.files;
+      if (!files || files.length === 0) return;
+      Array.from(files).forEach(file => {
+        if (!file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const img = document.createElement('img');
+          img.src = event.target.result;
+          img.alt = `User uploaded photo of ${previewContainerId.replace('-', ' ')}`;
+          previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      });
+      inputElement.value = '';
+    });
+  }
+  handleImageUpload(document.getElementById('upload-germination'), 'germination-photos');
+  handleImageUpload(document.getElementById('upload-sapling'), 'sapling-photos');
+  handleImageUpload(document.getElementById('upload-plantation'), 'plantation-photos');
+
+  // Share invite button
+  const shareInviteBtn = document.getElementById('share-invite-btn');
+  shareInviteBtn.addEventListener('click', async () => {
+    const shareData = {
+      title: 'Join the Mango Mission',
+      text: 'Join the #MangoMission - Donate mango seeds and grow trees in Chembur, Mumbai!',
+      url: window.location.href,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        prompt('Copy and share this link:', window.location.href);
+      }
+    } catch (err) {
+      alert('Sharing failed or canceled.');
+    }
+  });
+</script>
+</body>
+</html>
+

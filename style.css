@@ -1,0 +1,641 @@
+
+  /* Reset and Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    background-color: #f7f2ea;
+    color: #213318;
+  }
+  body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: #2f6c29;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #639c42;
+    outline: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  button {
+    cursor: pointer;
+  }
+  /* Utility */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+  /* Typography */
+  h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: #2f6c29;
+    margin-bottom: 0.5em;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  p, li {
+    font-size: 1rem;
+    color: #37472e;
+    margin-bottom: 1em;
+  }
+  /* Layout grid */
+  main {
+    flex-grow: 1;
+  }
+  section {
+    margin-bottom: 4rem;
+  }
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #5a7e1a, #8cbf26);
+    padding: 2rem 0 3rem;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+    user-select: none;
+  }
+  nav a {
+    color: white;
+    font-weight: 600;
+    margin-left: 1.75rem;
+    font-size: 1.125rem;
+  }
+  nav a:focus-visible,
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  #hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem 0 6rem;
+  }
+  #hero .hero-text {
+    max-width: 600px;
+  }
+  #hero h1 {
+    color: #3a5a0c;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  #hero p {
+    margin-bottom: 2.5rem;
+    font-size: 1.2rem;
+  }
+  #hero button.cta {
+    background-color: #89b255;
+    color: white;
+    border: none;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 0.8rem 2.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(137,178,85,0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #hero button.cta:hover,
+  #hero button.cta:focus {
+    background-color: #6f9433;
+    box-shadow: 0 6px 20px rgba(111,148,51,0.7);
+    outline: none;
+  }
+  #hero button.cta .material-icons {
+    font-size: 1.5rem;
+  }
+  #hero .hero-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(65,87,17,0.25);
+  }
+  #hero .hero-image img {
+    border-radius: 24px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    width: 100%;
+  }
+  #hero .donation-counter {
+    margin-top: 1.7rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4c621a;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    user-select: none;
+  }
+  #hero .donation-counter .material-icons {
+    color: #7eb04a;
+  }
+  
+  /* Section Titles */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  /* Seed Donation Flow */
+  #seed-flow {
+    background: #e8f0d9;
+    padding: 3rem 1rem 4rem;
+    border-radius: 20px;
+  }
+  #seed-flow .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1.75rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  #seed-flow .step {
+    background: white;
+    padding: 1.5rem 1.25rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.07);
+    text-align: center;
+    position: relative;
+  }
+  #seed-flow .step + .step::before {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    font-size: 2rem;
+    color: #7ea135;
+    transform: translateY(-50%);
+    user-select: none;
+  }
+  #seed-flow .step h3 {
+    margin-bottom: 1rem;
+    color: #558417;
+  }
+  #seed-flow .step svg {
+    height: 60px;
+    width: 60px;
+    fill: #7ea135;
+    margin-bottom: 1rem;
+  }
+  #seed-flow .step p {
+    color: #465a18;
+    font-weight: 600;
+  }
+  #seed-flow .location-container {
+    margin-top: 2.75rem;
+    text-align: center;
+  }
+  #seed-flow .map-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #558417;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: 2px solid #7ea135;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  #seed-flow .map-link:hover,
+  #seed-flow .map-link:focus {
+    background-color: #7ea135;
+    color: white;
+    outline: none;
+  }
+  #seed-flow .qr-code {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  #seed-flow .qr-code img {
+    width: 140px;
+    height: 140px;
+    border-radius: 16px;
+  }
+  #seed-flow .qr-code-caption {
+    color: #4c621a;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  
+  /* Monetary Donation System */
+  #donations {
+    padding: 3rem 1rem 4rem;
+    background: #f0f6e8;
+    border-radius: 20px;
+  }
+  #donations .payment-options {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+  #donations .payment-button {
+    flex: 1 0 140px;
+    background: #7ea135;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(126,161,53,0.6);
+    transition: background-color 0.3s ease;
+  }
+  #donations .payment-button:hover,
+  #donations .payment-button:focus {
+    background-color: #558417;
+    outline: none;
+  }
+  #donations .donation-input {
+    max-width: 200px;
+    margin: 1.5rem auto 2rem;
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+  }
+  #donations .donation-input label {
+    font-weight: 600;
+    color: #4c621a;
+  }
+  #donations .donation-input input[type=number] {
+    padding: 0.5rem 1rem;
+    border: 2px solid #7ea135;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    width: 100%;
+    max-width: 100px;
+  }
+  #donations .log-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: #d8e2b2;
+    border-radius: 14px;
+    padding: 1rem 1rem 0.7rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    height: 180px;
+    overflow-y: auto;
+    color: #2d440a;
+    box-shadow: inset 0 2px 6px rgba(45,68,10,0.6);
+  }
+  #donations .transparency-panel {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    background: white;
+    border-radius: 14px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px rgb(126 161 53 / 0.15);
+    font-size: 0.95rem;
+    color: #355114;
+  }
+  
+  /* Leaderboard and Donor Wall */
+  #leaderboard {
+    padding: 3rem 1rem 4rem;
+  }
+  #leaderboard .leaderboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  #leaderboard .donor-card {
+    background: #f7f9e5;
+    border-radius: 16px;
+    padding: 1.3rem 1rem 2rem;
+    box-shadow: 0 3px 10px rgb(83 116 23 / 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  #leaderboard .donor-card:hover {
+    transform: translateY(-5px);
+  }
+  #leaderboard .donor-photo {
+    width: 80px;
+    height: 80px;
+    background-color: #bcd27b;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgb(76 98 26 / 0.2);
+    margin-bottom: 0.85rem;
+  }
+  #leaderboard .donor-photo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  #leaderboard .donor-name {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #32510b;
+    margin-bottom: 0.3rem;
+  }
+  #leaderboard .donor-contrib {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #739345;
+  }
+  #leaderboard .gamify {
+    max-width: 1000px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #557a1a;
+  }
+  
+  /* Seed Growth Tracker */
+  #growth-tracker {
+    background: #e8f0d9;
+    border-radius: 20px;
+    padding: 3rem 1rem 4rem;
+  }
+  #growth-tracker .timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  #growth-tracker .timeline-item {
+    background: white;
+    padding: 1.5rem 1.6rem;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #growth-tracker .timeline-item h3 {
+    margin-bottom: 1rem;
+    color: #4b6a1f;
+  }
+  #growth-tracker .timeline-item p {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #4f6a22;
+  }
+  #growth-tracker .photo-upload {
+    margin-top: 1rem;
+  }
+  #growth-tracker .photo-upload label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+    color: #516f24;
+    cursor: pointer;
+    border: 2px dashed #7ea135;
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+    background-color: #e6f1c9;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  #growth-tracker .photo-upload label:hover,
+  #growth-tracker .photo-upload label:focus {
+    background-color: #cbe396;
+    outline: none;
+  }
+  #growth-tracker .photo-upload input[type="file"] {
+    display: none;
+  }
+  #growth-tracker .photos-preview {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  #growth-tracker .photos-preview img {
+    width: 120px;
+    height: 90px;
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center center;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.1);
+  }
+  
+  /* About + Mission */
+  #about {
+    padding: 3rem 1rem 4rem;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #about h2 {
+    margin-bottom: 1rem;
+  }
+  #about p {
+    font-size: 1.1rem;
+    color: #465a1e;
+  }
+  
+  /* Contact & Social Media */
+  #contact {
+    background: #f0f6e8;
+    border-radius: 20px;
+    padding: 3rem 1rem 4rem;
+    max-width: 850px;
+    margin: 0 auto 6rem;
+    text-align: center;
+  }
+  #contact h2 {
+    margin-bottom: 1.5rem;
+  }
+  #contact .whatsapp-button {
+    background-color: #25d366;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    padding: 0.85rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    box-shadow: 0 6px 20px rgb(37 211 102 / 0.54);
+    transition: background-color 0.3s ease;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  #contact .whatsapp-button:hover,
+  #contact .whatsapp-button:focus {
+    background-color: #1fa94a;
+    outline: none;
+  }
+  #contact .material-icons {
+    font-size: 1.6rem;
+  }
+  #contact .social {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+  }
+  #contact .social a {
+    color: #4c6726;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.15rem;
+    transition: border-color 0.3s ease;
+  }
+  #contact .social a:hover,
+  #contact .social a:focus {
+    border-color: #7ea135;
+    outline: none;
+  }
+  
+  /* Footer */
+  footer {
+    background: #375318;
+    color: #d9e3b8;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    user-select: none;
+  }
+  footer a {
+    color: #a7c159;
+  }
+  footer a:hover,
+  footer a:focus {
+    color: #dbeea3;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1023px) {
+    #hero {
+      grid-template-columns: 1fr;
+      padding-bottom: 3.5rem;
+    }
+    #hero .hero-text {
+      max-width: 100%;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    #hero .donation-counter {
+      justify-content: center;
+      font-size: 1.15rem;
+    }
+    #seed-flow .step + .step::before {
+      display: none;
+    }
+    #seed-flow .steps {
+      grid-template-columns: 1fr;
+    }
+    #leaderboard .leaderboard-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    header .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    nav a {
+      margin-left: 0;
+      font-size: 1rem;
+      padding: 0.3rem 0.25rem;
+    }
+    #leaderboard .leaderboard-grid {
+      grid-template-columns: 1fr;
+    }
+    #donations .payment-options {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #7ea135;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #eff4da;
+  }
+
+  /* Button focus outlines for accessibility */
+  button:focus,
+  a:focus {
+    outline: 3px solid #7ea135;
+    outline-offset: 2px;
+  }
